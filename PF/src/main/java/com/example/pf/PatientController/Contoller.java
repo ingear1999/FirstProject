@@ -1,10 +1,9 @@
-package Controller;
+package com.example.pf.PatientController;
 
-import Dto.PatientInfo;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller
-public class UserController {
-
+public class Contoller {
     @PostMapping("/register")
     public String registerPatient(@RequestParam String name,
                                   @RequestParam int age,
@@ -14,5 +13,4 @@ public class UserController {
         System.out.println("Address: " + address);
         return "Patient registered successfully!";
     }
-
 }
