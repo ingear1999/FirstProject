@@ -1,31 +1,34 @@
-package com.example.pf.Dito;
+package com.example.pf.Dito; // rename Dito -> dto
 
 public class PatientInfo {
-        public String getName() {
-            return name;
-        }
+    private String name;
+    private int age;
+    private String address;
+    
 
-        public void setName(String name) {
-            this.name = name;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public int getAge() {
-            return age;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        public void setAge(int age) {
-            this.age = age;
-        }
+    public int getAge() {
+        return age;
+    }
 
-        public String getAddress() {
-            return address;
-        }
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-        public void setAddress(String address) {
-            this.address = address;
-        }
+    public String getAddress() {
+        return address;
+    }
 
-        String name;
-        int age;
-        String address;
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+
 }

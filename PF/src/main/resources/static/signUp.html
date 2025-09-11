@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up (회원가입)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        form li {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+        }
+
+        .button-group {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>Sign Up</h1>
+
+<form action="/signup" method="post">
+    <ul>
+        <li>
+            <label for="id">ID</label>
+            <input type="text" name="id" id="id" required placeholder="Enter your ID">
+        </li>
+
+        <li>
+            <label for="pass">Password</label>
+            <input type="password" name="pass" id="pass" required placeholder="Enter your password">
+        </li>
+
+        <li>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required placeholder="Enter your name">
+        </li>
+
+        <li>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required placeholder="Enter your email">
+        </li>
+
+        <li class="button-group">
+            <button type="submit">Sign Up</button>
+            <button type="reset">Cancel</button>
+        </li>
+    </ul>
+</form>
+
+</body>
+</html>
