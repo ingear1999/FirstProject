@@ -6,31 +6,42 @@ body {
 
         h1 {
             text-align: center;
-        }
+            width: 98%;
+            border: 8px solid aqua;
+            background-color: aqua;
+            padding: 8px;}
 
         form ul {
             list-style: none;
             padding: 0;
+            
         }
 
         form li {
             margin-bottom: 15px;
+            
         }
 
         label {
             display: block;
             margin-bottom: 5px;
+            
         }
 
         input {
             width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
+            padding: 10px;
+           
+            
         }
 
         button {
             padding: 10px 20px;
             margin-right: 10px;
+            background-color: aqua;
+           border: 2px solid white; 
+            
+            
         }
 
         .button-group {
