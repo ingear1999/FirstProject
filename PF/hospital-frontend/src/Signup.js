@@ -1,17 +1,33 @@
-import './SignupDesign.css'
+import './SignupDesign.css';
 
 function Signup() {
   const handleSignupSubmit = (e) => {
-    e.preventDefault(); // fixed typo
+    e.preventDefault(); // stop page reload
 
     const data = {
       id: e.target.id.value,
-      pass: e.target.pass.value, // fixed value
+      pass: e.target.pass.value,
       name: e.target.name.value,
       email: e.target.email.value,
     };
 
-    console.log(data);
+    console.log("Signup data:", data);
+
+    // Send data to Spring Boot
+    fetch('http://localhost:8080/api/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((res) => {
+        console.log(res);
+        alert(res.message); // show success or error message
+      })
+      .catch((err) => {
+        console.error(err);
+        alert("Signup failed");
+      });
   };
 
   return (
@@ -21,29 +37,20 @@ function Signup() {
         <ul>
           <li>
             <label htmlFor="id">ID</label>
-            <input type="text" name="id" id="id" required placeholder="Enter your ID" />
+            <input type="text" name="id" id="id" required />
           </li>
-
           <li>
             <label htmlFor="pass">Password</label>
-            <input type="password" name="pass" id="pass" required placeholder="Enter your password" />
+            <input type="password" name="pass" id="pass" required />
           </li>
-
-          <li>
-            <label htmlFor="repass">Re Enter Password</label>
-            <input type="password" name="repass" id="repass" required placeholder="Enter your password" />
-          </li>
-
           <li>
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" required placeholder="Enter your name" />
+            <input type="text" name="name" id="name" required />
           </li>
-
           <li>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" required placeholder="Enter your email" />
+            <input type="email" name="email" id="email" required />
           </li>
-
           <li className="button-group">
             <button type="submit">Sign Up</button>
             <button type="reset">Cancel</button>

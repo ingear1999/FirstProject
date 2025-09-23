@@ -1,38 +1,30 @@
-import './SignupDesign.css'
-function Login(){
+import { useNavigate } from "react-router-dom";
 
-    const handleSubmit = (e)=>{  //(e) → This represents the event that happens. In this case, it’s the form submission event.
-        e.preventDefualt(); // stop page from reloading
-        const data ={
-            id: e.target.id.value, // get value from input with id="id"
-            pass: e.target.pass,   // get value from input with id="pass"
-        };
+function Login() {
+  const navigate = useNavigate();
 
-        console.log(data); // just check what we got
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    const id = e.target.id.value;
+    const pass = e.target.pass.value;
 
-    };
-    return(
+    // For now, allow any login
+    console.log({ id, pass });
+
+    // Redirect to dashboard
+    navigate("/dashboard");
+  };
+
+  return (
     <div>
-            <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-
-            <ul>
-                <li>
-                    <label>ID</label>
-                    <input type="text" name="id"/>
-                </li>
-                <li>
-                    <label>Pass</label>
-                    <input type="password" name="pass"/>
-                </li>
-                <li>
-                    <button type="submit">Login</button>
-                    <button type="reset">Cancel</button>
-                </li>
-            </ul>
-        </form>
+      <h1>Login</h1>
+      <form onSubmit={handleLoginSubmit}>
+        <input type="text" name="id" placeholder="ID" required />
+        <input type="password" name="pass" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
     </div>
-    )
-   
+  );
 }
+
 export default Login;
