@@ -8,6 +8,7 @@ public class PatientxService {
     public String registerPatient(SignupDTO patient) {
         // Imagine saving to DB here
         System.out.println("Saving patient: " + patient.getId());
+        // return 
         return "Patient registered!";
     }
 }
