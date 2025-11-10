@@ -1,11 +1,22 @@
 
 
+.initial-page2 {
+  position: fixed;          /* keeps it stuck to the left side */
+  top: 10%;                 /* adjust as needed from the top */
+  left: 1%;
+  width: 30%;               /* you can adjust (e.g., 25%, 40%) */
+                            /* min-height: 100vh; full screen height */
+  background: #bfc6cf;
+  padding: 30px;
+  box-sizing: border-box;   /* keeps padding inside the width */
+  
+}
 
 .header1 h1 {
   display: inline-block;
-  padding: 20px 40px;
+  padding: 10px 10px;
   border: 3px solid #5bb9ff;
-  color: white;
+  color: rgb(244, 243, 253);
   background: #0099ff;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -13,12 +24,15 @@
 }
 
 .header1 h1:hover {
-  transform: scale(1.05);
-  background-color: #29c2f5;
+  transform: scale(1.05); 
+  background-color: #14bcf5;
+  box-shadow: 0 6px 15px rgba(3, 3, 219, 0.3);
+  
 }
 
 .list {
   margin-top: 10px;
+  text-align: center;
 }
 
 .list ul {
@@ -40,8 +54,7 @@
 
 .list li:hover {
   transform: translateY(-5px); /* lift effect */
-  background-color: #e3f3ff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  background-color: #82cfe8;
 }
 
 .list li .icon {
@@ -58,5 +71,5 @@
 }
 
 .list li a:hover {
-  color: darkviolet;
+  color: rgb(234, 13, 186);
 }

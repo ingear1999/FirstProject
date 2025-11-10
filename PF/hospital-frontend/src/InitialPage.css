@@ -1,7 +1,8 @@
 .initial-page {
+  top: 10%;
   text-align: center;
   background: #f2f7ff;
-  padding: 30px;
+  padding: 0px;
   min-height: 100vh;
 }
 
@@ -11,7 +12,7 @@
 }
 
 .slider-container {
-  width: 80%;
+  width: 105%;
   margin: 20px auto;
 }
 
