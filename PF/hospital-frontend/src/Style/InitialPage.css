@@ -1,0 +1,33 @@
+.initial-page {
+  text-align: center;
+  background: #f2f7ff;
+  padding: 0;
+}
+
+.header h1 {
+  color: #1a3c6e;                 /* deep blue for readability */
+  background-color: #e3f2fd;       /* soft, hospital-friendly blue */
+  padding: 12px 20px;              /* more breathing space */
+  border-radius: 12px;             /* smooth corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* subtle, soft shadow */
+  font-size: 2rem;                 /* professional and readable */
+  font-weight: 600;                /* medium-bold */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.slider-container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.slider-container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  
+}
+
+

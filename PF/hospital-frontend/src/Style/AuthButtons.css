@@ -1,0 +1,130 @@
+/* ===== Container on the right side ===== */
+.auth-container-right {
+  position: fixed;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+
+  background: #f0f6fb;             /* light hospital panel background */
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* soft panel depth */
+  border: 2px solid #a8d0f0;       /* optional soft accent border */
+}
+
+/* ===== Header / Title ===== */
+.HeaderAuth {
+  display: block;
+  padding: 18px 30px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0d3c6e;                 /* deep hospital blue */
+  background: linear-gradient(145deg, #e6f0fa, #d0e6f8); /* soft gradient */
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* visible depth */
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for header */
+.HeaderAuth:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  background: linear-gradient(145deg, #d0e6f8, #b0d9f0); /* gradient shift */
+}
+
+/* ===== Buttons (already styled) ===== */
+.auth-btn {
+  position: relative;
+  padding: 16px 48px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0d3c6e; /* deep hospital blue text */
+  cursor: pointer;
+  overflow: hidden;
+  background: #ffffff; /* inner background matches panels */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* soft shadow like list items */
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+/* Double-frame glow */
+.auth-btn::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #00ffe0, #00aaff, #00ffb3, #00ffe0);
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background-size: 400%;
+  animation: glowMove 6s linear infinite;
+}
+
+/* Inner color layer */
+.auth-btn::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border-radius: 10px;
+  background: #ffffff; /* inner box color */
+  z-index: -1;
+}
+
+/* Hover effects for buttons */
+.auth-btn:hover::before {
+  opacity: 1; /* glowing frame appears */
+}
+
+.auth-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Active effect */
+.auth-btn:active {
+  transform: scale(0.97);
+}
+
+/* Login & Signup inner colors */
+.login-btn::after {
+  background: #d6eafc; /* soft hospital blue */
+}
+
+.signup-btn::after {
+  background: #d1f2eb; /* soft hospital teal */
+}
+
+/* Glowing outer frame animation */
+@keyframes glowMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Fade-slide entrance */
+.fade-slide {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: fadeSlideIn 0.8s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}

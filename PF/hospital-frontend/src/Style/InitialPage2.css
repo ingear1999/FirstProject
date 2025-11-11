@@ -1,0 +1,67 @@
+.initial-page2 {
+  position: fixed;
+  top: 10%;
+  left: 2%;
+  width: 28%; /* slightly narrower for more breathing room */
+  background: #f0f6fb; /* soft light blue for a calm hospital vibe */
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 16px; /* smooth edges */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* soft shadow for depth */
+}
+
+/* Header styling */
+.header1 h1 {
+  display: inline-block;
+  padding: 12px 16px;
+  color: #1a3c6e; /* deep, readable blue */
+  background-color: #d6eafc; /* soft, modern hospital blue */
+  border-radius: 12px; 
+  font-size: 1.6rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* subtle depth */
+  transition: all 0.3s ease;
+}
+
+.header1 h1:hover {
+  transform: scale(1.03);
+  background-color: #a9d6f5; /* gentle hover color */
+}
+
+/* List container */
+.list {
+  margin-top: 20px;
+  text-align: left; /* left-aligned for better readability */
+}
+
+/* Remove default ul padding */
+.list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* List items */
+.list li {
+  margin: 12px 0;
+  padding: 14px 20px;
+  font-size: 17px;
+  background: #ffffff; /* clean white inner background */
+  display: flex; /* horizontal layout */
+  align-items: center;
+  border-radius: 10px; /* smooth corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* subtle shadow for depth */
+  transition: all 0.3s ease;
+}
+
+.list li:hover {
+  transform: translateY(-3px);
+  background-color: #e0f4fd; /* soft hover color */
+}
+
+/* Icon styling */
+.list .icon {
+  margin-right: 12px;
+  color: #0d6efd; /* hospital blue accent */
+  font-size: 22px;
+}

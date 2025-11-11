@@ -1,8 +1,8 @@
-import './SignupDesign.css';
+import "./Style/SignupDesign.css";
 
 function Signup() {
   const handleSignupSubmit = (e) => {
-    e.preventDefault(); // stop page reload
+    e.preventDefault();
 
     const data = {
       id: e.target.id.value,
@@ -13,16 +13,14 @@ function Signup() {
 
     console.log("Signup data:", data);
 
-    // Send data to Spring Boot
-    fetch('http://localhost:8080/api/signup', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+    fetch("http://localhost:8080/api/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
-      .then((response) => response.json())
-      .then((res) => {
-        console.log(res);
-        alert(res.message); // show success or error message
+      .then((res) => res.json())
+      .then((result) => {
+        alert(result.message || "Signup successful!");
       })
       .catch((err) => {
         console.error(err);

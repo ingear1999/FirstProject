@@ -2,28 +2,28 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./InitialPage.css";
+import "./Style/InitialPage.css";
 import img1 from "./images/imgfirst.jpg";
 import img2 from "./images/imgsecond.jpg";
 import img3 from "./images/imgthird.jpg";
 
 function InitialPage() {
   const settings = {
-    dots: true,  // show small dots at the bottom
-    infinite: true, // loop slides infiniteky
-    speed: 800, // transition speed in ms
-    slidesToShow: 1, // show one slide at a time
-    slidesToScroll: 1, // scroll one slide at a time
-    autoplay: true, // enable auto play
-    autoplaySpeed: 2500, // auto play speed in ms
-    pauseOnHover: true,// pause auto play on hover
-    arrows: true, // show next/prev arrows
+    dots: true,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
+    pauseOnHover: true,
+    arrows: true,
   };
 
   return (
     <div className="initial-page">
       <header className="header">
-        <h1> Welcome to Our Hospital System</h1>
+        <h1>Welcome to Our Hospital System</h1>
         <p>Your health, our priority 💙</p>
       </header>
 
@@ -35,10 +35,6 @@ function InitialPage() {
         </Slider>
       </div>
 
-      <div className="buttons">
-        <a href="/login" className="btn">Login</a>
-        <a href="/signup" className="btn">Sign Up</a>
-      </div>
     </div>
   );
 }

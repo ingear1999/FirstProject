@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import './LoginDesign.css';
+import "./Style/LoginDesign.css";
 
 function Login() {
   const navigate = useNavigate();
@@ -10,10 +10,8 @@ function Login() {
     const id = e.target.id.value;
     const pass = e.target.pass.value;
 
-    // For now, just log values (later connect with Spring Boot backend)
     console.log("Login data:", { id, pass });
 
-    // Redirect to dashboard after login
     navigate("/dashboard");
   };
 

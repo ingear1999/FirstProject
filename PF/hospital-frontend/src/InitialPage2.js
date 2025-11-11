@@ -1,6 +1,6 @@
 import React from "react";
-import { FaHospitalUser, FaStethoscope, FaPhone, FaComments, FaUserMd } from "react-icons/fa"; // hospital-related icons
-import "./InitialPage2.css";
+import { FaHospitalUser, FaStethoscope, FaPhone, FaComments, FaUserMd } from "react-icons/fa";
+import "./Style/InitialPage2.css";
 
 function InitialPage2() {
   return (
@@ -11,26 +11,11 @@ function InitialPage2() {
 
       <div className="list">
         <ul>
-          <li id="l1">
-            <FaHospitalUser className="icon" />
-            <h>Hospital Policy</h>
-          </li>
-          <li id="l2">
-            <FaStethoscope className="icon" />
-            <h>Services Offered</h>
-          </li>
-          <li id="l3">
-            <FaPhone className="icon" />
-            <h>Contact Information</h>
-          </li>
-          <li id="l4">
-            <FaComments className="icon" />
-            <h>Patient Testimonials</h>
-          </li>
-          <li id="l5">
-            <FaUserMd className="icon" />
-            <h>Meet Our Doctors</h>
-          </li>
+          <li><FaHospitalUser className="icon" /><span>Hospital Policy</span></li>
+          <li><FaStethoscope className="icon" /><span>Services Offered</span></li>
+          <li><FaPhone className="icon" /><span>Contact Information</span></li>
+          <li><FaComments className="icon" /><span>Patient Testimonials</span></li>
+          <li><FaUserMd className="icon" /><span>Meet Our Doctors</span></li>
         </ul>
       </div>
     </div>
