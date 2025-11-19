@@ -1,14 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import "./Style/SignupDesign.css";
 
 function Signup() {
+  const navigate = useNavigate();
   const handleSignupSubmit = (e) => {
     e.preventDefault();
+    navigate("/MainPage");
 
     const data = {
       id: e.target.id.value,
       pass: e.target.pass.value,
       name: e.target.name.value,
       email: e.target.email.value,
+      
     };
 
     console.log("Signup data:", data);
@@ -29,7 +33,7 @@ function Signup() {
   };
 
   return (
-    <div>
+    <div className="signup-card">
       <h1>Sign Up</h1>
       <form onSubmit={handleSignupSubmit}>
         <ul>

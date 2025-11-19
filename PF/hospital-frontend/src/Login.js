@@ -12,11 +12,11 @@ function Login() {
 
     console.log("Login data:", { id, pass });
 
-    navigate("/dashboard");
+    navigate("/MainPage");
   };
 
   return (
-    <div>
+    <div className="login-card">
       <h1>Login</h1>
       <form onSubmit={handleLoginSubmit}>
         <input type="text" name="id" id="id" placeholder="Enter your ID" required />

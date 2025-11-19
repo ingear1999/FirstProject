@@ -2,16 +2,16 @@
 .auth-container-right {
   position: fixed;
   top: 50%;
-  right: 8%;
+  right: 0.5%;
   transform: translateY(-50%);
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center;
   gap: 20px;
-  z-index: 1000;
+  z-index: 1000; /* ensure it stays above other content*/
 
   background: #f0f6fb;             /* light hospital panel background */
-  padding: 30px;
+  padding: 20px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* soft panel depth */
   border: 2px solid #a8d0f0;       /* optional soft accent border */

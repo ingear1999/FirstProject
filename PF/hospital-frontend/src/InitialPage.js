@@ -6,6 +6,7 @@ import "./Style/InitialPage.css";
 import img1 from "./images/imgfirst.jpg";
 import img2 from "./images/imgsecond.jpg";
 import img3 from "./images/imgthird.jpg";
+import { FaHospitalUser, FaStethoscope, FaPhone } from "react-icons/fa";
 
 function InitialPage() {
   const settings = {
@@ -15,7 +16,7 @@ function InitialPage() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     arrows: true,
   };
@@ -23,7 +24,7 @@ function InitialPage() {
   return (
     <div className="initial-page">
       <header className="header">
-        <h1>Welcome to Our Hospital System</h1>
+        <h1>Welcome to Our Hospital</h1>
         <p>Your health, our priority 💙</p>
       </header>
 
@@ -35,6 +36,25 @@ function InitialPage() {
         </Slider>
       </div>
 
+      <div className="info-cards">
+        <div className="card">
+          <FaHospitalUser size={32} color="#007bff" />
+          <h2>Hospital Policy</h2>
+          <p>Compassionate, patient-centered care with integrity and professionalism.</p>
+        </div>
+
+        <div className="card">
+          <FaStethoscope size={32} color="#007bff" />
+          <h2>Services Offered</h2>
+          <p>General medicine, surgery, emergency, pediatrics, radiology, rehabilitation.</p>
+        </div>
+
+        <div className="card">
+          <FaPhone size={32} color="#007bff" />
+          <h2>Contact Us</h2>
+          <p>+1 555-123-4567 | info@ourhospital.com | Emergency: 911</p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,112 @@
+/* Base card style for all sections */
+.Policy, .ServicesOffered, .ContactInformation, .PatientTestimonials, .MeetOurDoctors {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 36px;
+  font-size: 1.15rem;
+  color: #0d3c6e;
+  background-color: #ffffff;
+  border-radius: 16px;
+  margin-top: 20px;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-left: 6px solid #0d6efd; /* accent stripe */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover lift effect */
+.Policy:hover, 
+.ServicesOffered:hover, 
+.ContactInformation:hover, 
+.PatientTestimonials:hover, 
+.MeetOurDoctors:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Fade-in and slide-up animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section headings with icon container */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0d3c6e;
+}
+
+/* Accent underline for headings */
+.section-header::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #0d6efd;
+  border-radius: 2px;
+  margin-top: 4px;
+  transition: width 0.3s ease;
+}
+
+.section-header:hover::after {
+  width: 80px;
+}
+
+/* List inside cards */
+.Policy ul, .ServicesOffered ul, .ContactInformation ul, .PatientTestimonials ul, .MeetOurDoctors ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Policy ul li, .ServicesOffered ul li, .ContactInformation ul li, .PatientTestimonials ul li, .MeetOurDoctors ul li {
+  padding-left: 24px;
+  position: relative;
+  line-height: 1.5;
+}
+
+/* Add small bullet icon */
+.Policy ul li::before, .ServicesOffered ul li::before, .ContactInformation ul li::before, .PatientTestimonials ul li::before, .MeetOurDoctors ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0d6efd;
+  font-size: 1.2rem;
+}
+
+/* Buttons container (optional if you add buttons in future) */
+.menu-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.menu-buttons button {
+  padding: 12px 18px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #d6eafc;
+  color: #1a3c6e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-buttons button:hover {
+  background-color: #a9d6f5;
+  transform: translateY(-2px);
+}
