@@ -10,6 +10,24 @@ import HealthTipsPage from "./HealthTipsPage";
 import SearchDoctorPage from "./SearchDoctorPage";
 import MedicalToolPage from "./MedicalToolPage";
 import FeedbackPage from "./FeedbackPage";
+import DoctorDashboard from "./DoctorsDashBoard";
+
+import Departments from "./Department/Departments";
+import MedicalStaff from "./Department/MedicalStaff";
+import SpecialtyCenters from "./Department/SpecialtyCenters";
+import MedicalEquipment from "./MedicalEquipment";
+
+import PracticeInformation from "./Hospital-Information/PracticeInformation";
+import HowToFindUs from "./Hospital-Information/HowToFindUs";
+import ParkingInformation from "./Hospital-Information/ParkingInformation";
+import HospitalFacilities from "./Hospital-Information/HospitalFacilities";
+import HealthInformation from "./Hospital-Information/HealthInformation";
+
+import Overview from "./About-the-hp/Overview";
+import Milestone from "./About-the-hp/Milestone";
+import DirectorGreetings from "./About-the-hp/DirectorGreetings";
+import MissionVision from "./About-the-hp/MissionVision";
+import HospitalNetwork from "./About-the-hp/HospitalNetwork";
 
 function App() {
   return (
@@ -26,6 +44,25 @@ function App() {
         <Route path="/search-doctor" element={<SearchDoctorPage />} />
         <Route path="/medical-tool" element={<MedicalToolPage />} />
         <Route path="/feedback" element={<FeedbackPage />} />
+        <Route path="/DoctorsDashBoard" element={<DoctorDashboard />} />
+
+        <Route path="/Departments" element={<Departments />} />
+        <Route path="/MedicalStaff" element={<MedicalStaff />} />
+        <Route path="/SpecialtyCenters" element={<SpecialtyCenters />} />
+        <Route path="/MedicalEquipment" element={<MedicalEquipment />} />
+
+        <Route path="/practice-information" element={<PracticeInformation />} />
+        <Route path="/find-us" element={<HowToFindUs />} />
+        <Route path="/parking-information" element={<ParkingInformation />} />
+        <Route path="/hospital-facilities" element={<HospitalFacilities />} />
+        <Route path="/health-information" element={<HealthInformation />} />
+
+        <Route path="/overview" element={<Overview />} />
+        <Route path="/milestone" element={<Milestone />} />
+        <Route path="/director-greetings" element={<DirectorGreetings />} />
+        <Route path="/MissionVision" element={<MissionVision />} />
+        <Route path="/hospital-network" element={<HospitalNetwork />} />
+
       </Routes>
     </Router>
   );

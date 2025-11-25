@@ -1,13 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaHospitalUser, FaStethoscope, FaPhone, FaComments, FaUserMd } from "react-icons/fa";
 import './Style/InitialPage2_1.css';
 
 function InitialPage2_1() {
+    const navigate = useNavigate();
     const params = new URLSearchParams(window.location.search);
     const show = params.get("show"); 
 
     return (
         <div className='styleInitialPage2_1'>
+
             {show === "Policy" && (
                 <div className='Policy'>
                     <div className="section-header"><FaHospitalUser /> 1️⃣ Hospital Policy</div>
@@ -58,11 +61,33 @@ function InitialPage2_1() {
             {show === "MeetOurDoctors" && (
                 <div className='MeetOurDoctors'>
                     <div className="section-header"><FaUserMd /> 5️⃣ Meet Our Doctors</div>
-                    <h2>Require To Join For Visit This Feathur</h2>
-                    <button onClick={() => window.location.href = '/login'}> Login</button>
-                    <button onClick={() => window.location.href = '/signup'}> Signup</button>
+                    <h2>Please Login or Signup to View Doctors</h2>
+
+                    <div className="buttons-container" style={{ marginTop: '20px', display: 'flex', gap: '15px' }}>
+                        <button 
+                            className="btn-login"
+                            onClick={() => navigate("/")}
+                        >
+                            Login (Main Page)
+                        </button>
+
+                        <button 
+                            className="btn-doctor"
+                            onClick={() => navigate("/DoctorsDashBoard")}
+                        >
+                            View Doctors (Doctor Dashboard)
+                        </button>
+
+                        <button 
+                            className="btn-signup"
+                            onClick={() => navigate("/signup")}
+                        >
+                            Signup
+                        </button>
+                    </div>
                 </div>
             )}
+
         </div>
     );
 }

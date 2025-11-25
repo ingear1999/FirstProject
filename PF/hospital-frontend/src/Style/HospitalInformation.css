@@ -1,0 +1,148 @@
+/* HospitalModern.css - Modern Premium Style with Animations */
+:root {
+  --primary: #0b74ff;
+  --secondary: #00c2ff;
+  --bg: #f0f4f8;
+  --card-bg: #ffffff;
+  --shadow: 0 12px 24px rgba(0,0,0,0.1);
+  --radius: 14px;
+  --max-w: 1200px;
+  --text-muted: #6c757d;
+}
+
+/* Global Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+.page-container {
+  max-width: var(--max-w);
+  margin: 120px auto 80px; /* top spacing for navbar */
+  padding: 0 24px;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  background: blue; /* outside background */
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+
+.hero:hover {
+  transform: translateY(-6px);
+}
+
+/* Style for the H1 "Health Information" */
+.hero-left h1 {
+  font-size: 32px;
+  color: blue; /* font color */
+  background: white; /* background color */
+  display: inline-block; /* shrink to content */
+  padding: 8px 16px; /* space around text */
+  border-radius: 4px; /* optional: rounded corners */
+  margin-bottom: 12px;
+}
+
+/* Paragraph style */
+.hero-left h2 {
+  color: white;
+  font-size: 16px;
+  font-style: oblique;
+  margin-bottom: 20px;
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 8px; /* space between text and line */
+}
+
+
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(11,116,255,0.2);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(11,116,255,0.25);
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(7,42,107,0.2);
+  color: #072a6b;
+}
+
+/* Section & Title */
+.section {
+  margin-top: 36px;
+}
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.section-title h2 { margin: 0; color: #072a6b; }
+.section-title p { margin: 0; color: var(--text-muted); font-size: 14px; }
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+.card h3 { margin-bottom: 8px; color:#072a6b; }
+.card p { margin: 0; color: var(--text-muted); }
+
+/* Animated List Items */
+.animated-list li {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.5s forwards;
+}
+.animated-list li:nth-child(1){ animation-delay: 0.1s; }
+.animated-list li:nth-child(2){ animation-delay: 0.2s; }
+.animated-list li:nth-child(3){ animation-delay: 0.3s; }
+.animated-list li:nth-child(4){ animation-delay: 0.4s; }
+
+@keyframes slideIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media(max-width: 1000px){
+  .hero { flex-direction: column; }
+  .card-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width: 700px){
+  .card-grid { grid-template-columns: 1fr; }
+  .page-container { margin: 100px 18px 60px; }
+}

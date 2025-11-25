@@ -35,26 +35,6 @@ function InitialPage() {
           <div><img src={img3} alt="Hospital view 3" /></div>
         </Slider>
       </div>
-
-      <div className="info-cards">
-        <div className="card">
-          <FaHospitalUser size={32} color="#007bff" />
-          <h2>Hospital Policy</h2>
-          <p>Compassionate, patient-centered care with integrity and professionalism.</p>
-        </div>
-
-        <div className="card">
-          <FaStethoscope size={32} color="#007bff" />
-          <h2>Services Offered</h2>
-          <p>General medicine, surgery, emergency, pediatrics, radiology, rehabilitation.</p>
-        </div>
-
-        <div className="card">
-          <FaPhone size={32} color="#007bff" />
-          <h2>Contact Us</h2>
-          <p>+1 555-123-4567 | info@ourhospital.com | Emergency: 911</p>
-        </div>
-      </div>
     </div>
   );
 }

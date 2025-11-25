@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Style/MainPage.css";
+import pic1 from "./images/pic1.jpg";
+import pic2 from "./images/pic2.jpg";
 
 function MainPage() {
   const [isOpen, setIsOpen] = useState(false); // mobile menu
@@ -21,44 +24,55 @@ function MainPage() {
   return (
     <div className="noName">
       {/* Navbar */}
-      <nav className="navbar">
-        <div className="nav-logo">Hospital</div>
-        <div className="hamburger" onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul className={`nav-menu ${isOpen ? "active" : ""}`}>
-          <li className="nav-item dropdown">
-            <a href="#" className="nav-link">Department / Medical Staff</a>
-            <ul className="dropdown-menu">
-              <li><a href="D">Department</a></li>
-              <li><a href="M">Medical Staff</a></li>
-              <li><a href="S">Specialize Centers</a></li>
-            </ul>
-          </li>
-          <li className="nav-item dropdown">
-            <a href="#" className="nav-link">Hospital Information</a>
-            <ul className="dropdown-menu">
-              <li><a href="P">Practice Information</a></li>
-              <li><a href="A">How to find us</a></li>
-              <li><a href="P">Parking Information</a></li>
-              <li><a href="H">Hospital Facilities</a></li>
-              <li><a href="He">Health Information</a></li>
-            </ul>
-          </li>
-          <li className="nav-item dropdown">
-            <a href="#" className="nav-link">About This Hospital</a>
-            <ul className="dropdown-menu">
-              <li><a href="O">Overview</a></li>
-              <li><a href="M">Milestone</a></li>
-              <li><a href="D">Director's Greetings</a></li>
-              <li><a href="M">Mission-Vision-Core Values</a></li>
-              <li><a href="H">Hospital Network</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+
+<nav className="navbar">
+  <div className="nav-logo">Hospital</div>
+
+  <div className="hamburger" onClick={toggleMenu}>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul className={`nav-menu ${isOpen ? "active" : ""}`}>
+
+    {/* Department / Medical Staff */}
+    <li className="nav-item dropdown">
+      <span className="nav-link">Department / Medical Staff</span>
+      <ul className="dropdown-menu">
+        <li><Link to="/Departments">Department</Link></li>
+        <li><Link to="/MedicalStaff">Medical Staff</Link></li>
+        <li><Link to="/SpecialtyCenters">Specialize Centers</Link></li>
+      </ul>
+    </li>
+
+    {/* Hospital Information */}
+    <li className="nav-item dropdown">
+      <span className="nav-link">Hospital Information</span>
+      <ul className="dropdown-menu">
+        <li><Link to="/practice-information">Practice Information</Link></li>
+        <li><Link to="/find-us">How to find us</Link></li>
+        <li><Link to="/parking-information">Parking Information</Link></li>
+        <li><Link to="/hospital-facilities">Hospital Facilities</Link></li>
+        <li><Link to="/health-information">Health Information</Link></li>
+      </ul>
+    </li>
+
+    {/* About This Hospital */}
+    <li className="nav-item dropdown">
+      <span className="nav-link">About This Hospital</span>
+      <ul className="dropdown-menu">
+        <li><Link to="/overview">Overview</Link></li>
+        <li><Link to="/milestone">Milestone</Link></li>
+        <li><Link to="/director-greetings">Director's Greetings</Link></li>
+        <li><Link to="/MissionVision">Mission-Vision-Core Values</Link></li>
+        <li><Link to="/hospital-network">Hospital Network</Link></li>
+      </ul>
+    </li>
+
+  </ul>
+</nav>
+
 
       {/* Left Services Cards */}
       <section className="services py-5" id="Services-cards">
@@ -114,12 +128,13 @@ function MainPage() {
       </div>
 
       {/* About Section */}
-      <footer className="about">
-        <div className="about-content fade-in">
-          <h2 className="section-title">About Our Hospital</h2>
-          <p>Founded in 1990, our hospital has been committed to providing excellent patient care, advanced medical services, and a compassionate environment for all patients.</p>
+      <section className="about-images-section">
+        <div className="about-images-frame">
+          <img src={pic1} alt="Hospital View 1" className="about-img" />
+          <img src={pic2} alt="Hospital View 2" className="about-img" />
         </div>
-      </footer>
+      </section>
+
     </div>
   );
 }
