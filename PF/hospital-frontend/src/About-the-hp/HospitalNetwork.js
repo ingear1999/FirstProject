@@ -7,7 +7,7 @@ export default function HospitalNetwork() {
       <section className="hero">
         <div className="hero-left">
           <h1>Hospital Network</h1>
-          <p>Learn about our affiliated hospitals and medical centers across the region.</p>
+          <h2>Learn about our affiliated hospitals and medical centers across the region.</h2>
         </div>
       </section>
 

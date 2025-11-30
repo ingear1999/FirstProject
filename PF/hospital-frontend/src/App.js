@@ -29,6 +29,10 @@ import DirectorGreetings from "./About-the-hp/DirectorGreetings";
 import MissionVision from "./About-the-hp/MissionVision";
 import HospitalNetwork from "./About-the-hp/HospitalNetwork";
 
+import SymptomChecker from "./Symtomcheck-feather/SymptomChecker";
+
+import MedicalTerminology from "./Medical-Terminology/MedicalTerminology";
+
 function App() {
   return (
     <Router>
@@ -62,6 +66,10 @@ function App() {
         <Route path="/director-greetings" element={<DirectorGreetings />} />
         <Route path="/MissionVision" element={<MissionVision />} />
         <Route path="/hospital-network" element={<HospitalNetwork />} />
+
+        <Route path="/symptom-checker" element={<SymptomChecker />} />
+        
+        <Route path="/MedicalTerminology" element={<MedicalTerminology />} />
 
       </Routes>
     </Router>

@@ -6,9 +6,12 @@ import "./Style/InitialPage.css";
 import img1 from "./images/imgfirst.jpg";
 import img2 from "./images/imgsecond.jpg";
 import img3 from "./images/imgthird.jpg";
-import { FaHospitalUser, FaStethoscope, FaPhone } from "react-icons/fa";
+import { FaBookMedical } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function InitialPage() {
+  const navigate = useNavigate();
+
   const settings = {
     dots: true,
     infinite: true,
@@ -34,6 +37,13 @@ function InitialPage() {
           <div><img src={img2} alt="Hospital view 2" /></div>
           <div><img src={img3} alt="Hospital view 3" /></div>
         </Slider>
+      </div>
+
+      {/* ✅ Only one feature card */}
+      <div className="single-feature-card" onClick={() => navigate("/MedicalTerminology")}>
+        <FaBookMedical className="feature-icon" />
+        <h2>Medical Terminology</h2>
+        <p>Learn essential healthcare terms used by professionals.</p>
       </div>
     </div>
   );

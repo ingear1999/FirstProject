@@ -1,0 +1,89 @@
+.medical-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f0f6fb;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.medical-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.medical-header h1 {
+  font-size: 2rem;
+  background: linear-gradient(90deg, #007bff, #00bcd4);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.medical-header p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #0d3c6e;
+}
+
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.search-container input {
+  width: 60%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0,123,255,0.3);
+}
+
+.terms-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.term-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.term-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.term-card h2 {
+  margin-bottom: 8px;
+  color: #0d3c6e;
+}
+
+.term-card p {
+  color: #0d3c6e;
+  line-height: 1.4;
+}
+
+.no-results {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}

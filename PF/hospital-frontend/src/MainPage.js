@@ -19,6 +19,8 @@ function MainPage() {
     { title: "Search Doctor", desc: "Find doctors and departments.", className: "feature-search", path: "/search-doctor" },
     { title: "Medical Tool", desc: "Calculate BMI or vitals.", className: "feature-tool", path: "/medical-tool" },
     { title: "Feedback", desc: "Send us your comments.", className: "feature-feedback", path: "/feedback" },
+    { title: "Symptom Checker", desc: "Check illness based on symptoms.", className: "feature-checker", path: "/symptom-checker" }
+
   ];
 
   return (

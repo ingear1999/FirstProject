@@ -1,15 +1,21 @@
-/* Reset and base */
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f6fb; /* soft light blue background */
-  display: fixed;
-  justify-content: right;
-  align-items: center;
-  height: 100vh;
+/* Ensure full height for centering */
+html, body, #root {
+  height: 100%;
   margin: 0;
+  padding: 0;
 }
 
-/* Card container */
+/* Wrapper to center the login card */
+.page-login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f6fb; /* soft light blue background */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Login card container */
 .login-card {
   background-color: #ffffff;
   padding: 40px 40px;
@@ -24,7 +30,7 @@ body {
   animation: fadeInUp 0.6s forwards;
 }
 
-/* Keyframes fade-in slide up */
+/* Keyframes fade-in */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -33,11 +39,11 @@ body {
 }
 
 /* Header */
-h1 {
+.login-title {
   text-align: center;
   background: linear-gradient(90deg, #007bff, #00bcd4);
   color: white;
-  padding: 14px ;
+  padding: 14px;
   border-radius: 12px;
   margin-bottom: 30px;
   font-size: 1.8rem;
@@ -45,12 +51,12 @@ h1 {
   transition: all 0.3s ease;
 }
 
-h1:hover {
+.login-title:hover {
   transform: scale(1.03);
 }
 
-/* Form inputs */
-form input {
+/* Inputs */
+.login-card input {
   width: 95%;
   padding: 12px 14px;
   margin-bottom: 20px;
@@ -60,14 +66,14 @@ form input {
   transition: all 0.3s ease;
 }
 
-form input:focus {
+.login-card input:focus {
   border-color: #007bff;
   box-shadow: 0 0 8px rgba(0,123,255,0.3);
   outline: none;
 }
 
 /* Buttons */
-button {
+.login-card button {
   padding: 12px 24px;
   margin-right: 10px;
   background-color: #007bff;
@@ -79,7 +85,7 @@ button {
   transition: all 0.3s ease;
 }
 
-button:hover {
+.login-card button:hover {
   background-color: #00bcd4;
   transform: translateY(-2px);
 }

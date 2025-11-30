@@ -6,7 +6,7 @@ export default function Milestone() {
       <section className="hero">
         <div className="hero-left">
           <h1>Hospital Milestones</h1>
-          <p>Key achievements and milestones in our journey of healthcare excellence.</p>
+          <h2>Key achievements and milestones in our journey of healthcare excellence.</h2>
         </div>
       </section>
 

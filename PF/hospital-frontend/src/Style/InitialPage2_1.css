@@ -1,112 +1,220 @@
-/* Base card style for all sections */
-.Policy, .ServicesOffered, .ContactInformation, .PatientTestimonials, .MeetOurDoctors {
+:root {
+  --primary-color: #0d3c6e;
+  --accent-color: #00bcd4;
+  --bg-light: #f2f7ff;
+  --card-bg: #ffffff;
+  --shadow-light: rgba(0,0,0,0.08);
+  --shadow-hover: rgba(0,0,0,0.15);
+}
+
+.ipp21-page {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 24px 36px;
-  font-size: 1.15rem;
-  color: #0d3c6e;
-  background-color: #ffffff;
-  border-radius: 16px;
-  margin-top: 20px;
-  position: relative;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  border-left: 6px solid #0d6efd; /* accent stripe */
+  justify-content: center;
+  padding: 50px 20px;
+  background-color: var(--bg-light);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ipp21-card {
+  background-color: var(--card-bg);
+  border-radius: 24px;
+  padding: 40px 50px;
+  max-width: 720px;
+  width: 100%;
+  box-shadow: 0 12px 28px var(--shadow-light);
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s forwards;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(30px);
+  animation: ipp21-fadeInUp 0.7s forwards;
+  transition: all 0.3s ease;
 }
 
-/* Hover lift effect */
-.Policy:hover, 
-.ServicesOffered:hover, 
-.ContactInformation:hover, 
-.PatientTestimonials:hover, 
-.MeetOurDoctors:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+@keyframes ipp21-fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Fade-in and slide-up animation */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Section headings with icon container */
-.section-header {
+.ipp21-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #0d3c6e;
+  gap: 16px;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+  position: relative;
 }
 
-/* Accent underline for headings */
-.section-header::after {
+.ipp21-header::after {
   content: '';
-  display: block;
-  width: 50px;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 80px;
   height: 4px;
-  background-color: #0d6efd;
+  background: var(--accent-color);
   border-radius: 2px;
-  margin-top: 4px;
   transition: width 0.3s ease;
 }
 
-.section-header:hover::after {
-  width: 80px;
+.ipp21-header:hover::after {
+  width: 120px;
 }
 
-/* List inside cards */
-.Policy ul, .ServicesOffered ul, .ContactInformation ul, .PatientTestimonials ul, .MeetOurDoctors ul {
+.ipp21-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
-.Policy ul li, .ServicesOffered ul li, .ContactInformation ul li, .PatientTestimonials ul li, .MeetOurDoctors ul li {
-  padding-left: 24px;
+.ipp21-list li {
   position: relative;
-  line-height: 1.5;
+  padding-left: 24px;
+  line-height: 1.6;
+  color: var(--primary-color);
+  font-size: 1.05rem;
+  transition: transform 0.2s ease;
 }
 
-/* Add small bullet icon */
-.Policy ul li::before, .ServicesOffered ul li::before, .ContactInformation ul li::before, .PatientTestimonials ul li::before, .MeetOurDoctors ul li::before {
+.ipp21-list li::before {
   content: "•";
   position: absolute;
   left: 0;
-  color: #0d6efd;
+  color: var(--accent-color);
   font-size: 1.2rem;
 }
 
-/* Buttons container (optional if you add buttons in future) */
-.menu-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+.ipp21-list li:hover {
+  transform: translateX(4px);
 }
 
-.menu-buttons button {
-  padding: 12px 18px;
+.ipp21-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.ipp21-btn {
+  padding: 14px 24px;
   font-size: 1rem;
-  border-radius: 10px;
+  border-radius: 14px;
   border: none;
-  background-color: #d6eafc;
-  color: #1a3c6e;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 6px 18px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.ipp21-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px var(--shadow-hover);
+}
+
+.ipp21-placeholder {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 60px;
+  color: #666;
+}
+
+/* ---------- Testimonials Styles ---------- */
+.ipp21-testimonials .testimonial-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #f9fbff;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+}
+
+.ipp21-testimonials .testimonial-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.testimonial-actions button {
+  margin-left: 8px;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ipp21-small-btn {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.ipp21-small-btn.delete {
+  background-color: #ff5c5c;
+}
+
+.ipp21-small-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.testimonial-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.testimonial-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+.testimonial-form input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 6px rgba(0,188,212,0.3);
+}
+
+.testimonial-form button {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.menu-buttons button:hover {
-  background-color: #a9d6f5;
-  transform: translateY(-2px);
+.testimonial-form button:hover {
+  background: var(--accent-color);
+}
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 768px) {
+  .ipp21-card {
+    padding: 25px 30px;
+  }
+  .ipp21-header {
+    font-size: 1.5rem;
+  }
+  .ipp21-list li {
+    font-size: 1rem;
+  }
+  .ipp21-btn {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+  .testimonial-form input {
+    font-size: 0.95rem;
+  }
 }

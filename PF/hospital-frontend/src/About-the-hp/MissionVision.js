@@ -7,7 +7,7 @@ import "../Style/HospitalInformation.css";
       <section className="hero">
         <div className="hero-left">
           <h1>Mission, Vision & Core Values</h1>
-          <p>Our guiding principles that shape the culture and care at our hospital.</p>
+          <h2>Our guiding principles that shape the culture and care at our hospital.</h2>
         </div>
       </section>
 

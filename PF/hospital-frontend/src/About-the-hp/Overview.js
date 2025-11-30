@@ -7,7 +7,7 @@ export default function Overview() {
       <section className="hero">
         <div className="hero-left">
           <h1>Hospital Overview</h1>
-          <p>Discover our mission, vision, and the commitment to healthcare excellence.</p>
+          <h2>Discover our mission, vision, and the commitment to healthcare excellence.</h2>
         </div>
       </section>
 

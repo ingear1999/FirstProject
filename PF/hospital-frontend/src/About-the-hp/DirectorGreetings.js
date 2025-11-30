@@ -8,7 +8,7 @@ export default function DirectorGreetings() {
       <section className="hero">
         <div className="hero-left">
           <h1>Director's Greetings</h1>
-          <p>Message from our hospital director welcoming patients and staff.</p>
+          <h2>Message from our hospital director welcoming patients and staff.</h2>
         </div>
       </section>
 

@@ -16,16 +16,33 @@ function Login() {
   };
 
   return (
-    <div className="login-card">
-      <h1>Login</h1>
-      <form onSubmit={handleLoginSubmit}>
-        <input type="text" name="id" id="id" placeholder="Enter your ID" required />
-        <input type="password" name="pass" id="pass" placeholder="Enter your password" required />
-        <div className="button-group">
-          <button type="submit">Login</button>
-          <button type="reset">Cancel</button>
-        </div>
-      </form>
+    <div className="page-login-wrapper">
+      <div className="login-card">
+        <h1 className="login-title">Login</h1>
+
+        <form onSubmit={handleLoginSubmit}>
+          <input
+            type="text"
+            name="id"
+            id="id"
+            placeholder="Enter your ID"
+            required
+          />
+
+          <input
+            type="password"
+            name="pass"
+            id="pass"
+            placeholder="Enter your password"
+            required
+          />
+
+          <div className="button-group">
+            <button type="submit">Login</button>
+            <button type="reset">Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

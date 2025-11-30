@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaHospitalUser, FaStethoscope, FaPhone, FaComments, FaUserMd } from "react-icons/fa";
 import './Style/InitialPage2_1.css';
@@ -8,86 +8,145 @@ function InitialPage2_1() {
     const params = new URLSearchParams(window.location.search);
     const show = params.get("show"); 
 
+    // Patient Testimonials state
+    const [testimonials, setTestimonials] = useState([
+        { id: 1, text: "The doctors and nurses were attentive. Recovery was smooth." },
+        { id: 2, text: "I felt safe and cared for. Highly recommend!" },
+        { id: 3, text: "Excellent facilities and very professional staff." }
+    ]);
+    const [newTestimonial, setNewTestimonial] = useState("");
+    const [editId, setEditId] = useState(null);
+
+    const handleAdd = () => {
+        if (newTestimonial.trim() === "") return;
+        if (editId) {
+            setTestimonials(prev =>
+                prev.map(t => (t.id === editId ? { ...t, text: newTestimonial } : t))
+            );
+            setEditId(null);
+        } else {
+            setTestimonials(prev => [
+                ...prev,
+                { id: Date.now(), text: newTestimonial }
+            ]);
+        }
+        setNewTestimonial("");
+    };
+
+    const handleEdit = (id, text) => {
+        setEditId(id);
+        setNewTestimonial(text);
+    };
+
+    const handleDelete = (id) => {
+        setTestimonials(prev => prev.filter(t => t.id !== id));
+    };
+
+    // Sections data
+    const sections = [
+        {
+            key: "Policy",
+            title: "Hospital Policy",
+            icon: <FaHospitalUser />,
+            content: [
+                "Patient-centered care with compassion and integrity.",
+                "Visiting hours: 9 AM – 8 PM daily.",
+                "Patient privacy and safety are top priorities."
+            ]
+        },
+        {
+            key: "ServicesOffered",
+            title: "Services Offered",
+            icon: <FaStethoscope />,
+            content: [
+                "General Medicine & Internal Care",
+                "Surgery & Emergency Services",
+                "Pediatrics & Neonatal Care",
+                "Radiology & Lab Testing",
+                "Physical Therapy & Rehabilitation"
+            ]
+        },
+        {
+            key: "ContactInformation",
+            title: "Contact Information",
+            icon: <FaPhone />,
+            content: [
+                "Phone: +1 555-123-4567",
+                "Email: info@ourhospital.com",
+                "Address: 123 Main Street, City, Country",
+                "For emergencies: Call 911"
+            ]
+        },
+        {
+            key: "PatientTestimonials",
+            title: "Patient Testimonials",
+            icon: <FaComments />,
+            content: testimonials,
+            isTestimonials: true
+        },
+        {
+            key: "MeetOurDoctors",
+            title: "Meet Our Doctors",
+            icon: <FaUserMd />,
+            content: [
+                "Please Login or Signup to view doctors."
+            ],
+            buttons: [
+                { label: "Login", action: () => navigate("/") },
+                { label: "View Doctors", action: () => navigate("/DoctorsDashBoard") },
+                { label: "Signup", action: () => navigate("/signup") }
+            ]
+        }
+    ];
+
+    const currentSection = sections.find(sec => sec.key === show);
+
+    if (!currentSection) return <p className="ipp21-placeholder">Select a section to display</p>;
+
     return (
-        <div className='styleInitialPage2_1'>
-
-            {show === "Policy" && (
-                <div className='Policy'>
-                    <div className="section-header"><FaHospitalUser /> 1️⃣ Hospital Policy</div>
-                    <ul>
-                        <li>Our hospital is committed to providing patient-centered care with compassion and integrity.</li>
-                        <li>Visiting hours: 9 AM – 8 PM daily.</li>
-                        <li>Patient privacy and safety are our top priorities.</li>
-                    </ul>
+        <div className='ipp21-page'>
+            <div className='ipp21-card'>
+                <div className='ipp21-header'>
+                    {currentSection.icon} {currentSection.title}
                 </div>
-            )}
 
-            {show === "ServicesOffered" && (
-                <div className='ServicesOffered'>
-                    <div className="section-header"><FaStethoscope /> 2️⃣ Services Offered</div>
-                    <ul>
-                        <li>General Medicine & Internal Care</li>
-                        <li>Surgery & Emergency Services</li>
-                        <li>Pediatrics & Neonatal Care</li>
-                        <li>Radiology & Lab Testing</li>
-                        <li>Physical Therapy & Rehabilitation</li>
+                {currentSection.isTestimonials ? (
+                    <>
+                        <ul className='ipp21-list'>
+                            {testimonials.map(t => (
+                                <li key={t.id} className='testimonial-item'>
+                                    {t.text}
+                                    <div className="testimonial-actions">
+                                        <button className='ipp21-small-btn' onClick={() => handleEdit(t.id, t.text)}>Edit</button>
+                                        <button className='ipp21-small-btn delete' onClick={() => handleDelete(t.id)}>Delete</button>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                        <div className='testimonial-form'>
+                            <input 
+                                type="text" 
+                                placeholder="Write your testimonial..." 
+                                value={newTestimonial} 
+                                onChange={(e) => setNewTestimonial(e.target.value)}
+                            />
+                            <button onClick={handleAdd}>{editId ? "Update" : "Add"}</button>
+                        </div>
+                    </>
+                ) : (
+                    <ul className='ipp21-list'>
+                        {currentSection.content.map((item, idx) => <li key={idx}>{item}</li>)}
                     </ul>
-                </div>
-            )}
+                )}
 
-            {show === "ContactInformation" && (
-                <div className='ContactInformation'>
-                    <div className="section-header"><FaPhone /> 3️⃣ Contact Information</div>
-                    <ul>
-                        <li>Phone: +1 555-123-4567</li>
-                        <li>Email: info@ourhospital.com</li>
-                        <li>Address: 123 Main Street, City, Country</li>
-                        <li>For emergencies: Call 911</li>
-                    </ul>
-                </div>
-            )}
-
-            {show === "PatientTestimonials" && (
-                <div className='PatientTestimonials'>
-                    <div className="section-header"><FaComments /> 4️⃣ Patient Testimonials</div>
-                    <ul>
-                        <li>“The doctors and nurses were so attentive. My recovery was smooth and comfortable.” – Jane D.</li>
-                        <li>“I felt safe and cared for every step of the way. Highly recommend!” – Mark P.</li>
-                        <li>“Excellent facilities and very professional staff.” – Linda R.</li>
-                    </ul>
-                </div>
-            )}
-
-            {show === "MeetOurDoctors" && (
-                <div className='MeetOurDoctors'>
-                    <div className="section-header"><FaUserMd /> 5️⃣ Meet Our Doctors</div>
-                    <h2>Please Login or Signup to View Doctors</h2>
-
-                    <div className="buttons-container" style={{ marginTop: '20px', display: 'flex', gap: '15px' }}>
-                        <button 
-                            className="btn-login"
-                            onClick={() => navigate("/")}
-                        >
-                            Login (Main Page)
-                        </button>
-
-                        <button 
-                            className="btn-doctor"
-                            onClick={() => navigate("/DoctorsDashBoard")}
-                        >
-                            View Doctors (Doctor Dashboard)
-                        </button>
-
-                        <button 
-                            className="btn-signup"
-                            onClick={() => navigate("/signup")}
-                        >
-                            Signup
-                        </button>
+                {currentSection.buttons && (
+                    <div className='ipp21-buttons'>
+                        {currentSection.buttons.map((btn, idx) => (
+                            <button key={idx} onClick={btn.action} className='ipp21-btn'>{btn.label}</button>
+                        ))}
                     </div>
-                </div>
-            )}
-
+                )}
+            </div>
         </div>
     );
 }
